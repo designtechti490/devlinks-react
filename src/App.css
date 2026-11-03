@@ -201,8 +201,9 @@ ul li a:hover {
 /* End of Social Icons */
 
 /* Footer */
-footer p {
+footer {
   display: flex;
+  margin-bottom: 1.5rem;
   padding: 24px;
   justify-content: center;
   align-items: center;
@@ -211,11 +212,11 @@ footer p {
   font-size: 14px;
 }
 
-footer p a {
+footer a {
   transition: color 0.1s;
 }
 
-footer p a:hover {
+footer a:hover {
   color: #2f96d8;
 }
 /* End of Footer */
