@@ -14,6 +14,7 @@
   --highlight-color: rgba(255, 255, 255, 0.2);
   --surface-color-hover: rgba(255, 255, 255, 0.05);
   --switch-bg-url: url("./assets/moon-stars.svg");
+  background: transparent;
 }
 
 .light {
@@ -27,9 +28,12 @@
 }
 
 /* Body */
+html,
 body {
   /* background: color image repeat position / size */
   background: var(--bg-url) no-repeat top center / cover;
+  background-attachment: fixed;
+  min-height: 100%;
 }
 
 body * {
