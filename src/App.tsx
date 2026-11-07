@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import {
   CodeIcon,
   EnvelopeClosedIcon,
@@ -8,25 +8,70 @@ import {
   LinkedInLogoIcon,
   TwitterLogoIcon,
   VideoIcon,
-} from "@radix-ui/react-icons";
-import avatarLight from "./assets/avatar-light.png";
-import avatar from "./assets/avatar.png";
-import "./App.css";
+} from "@radix-ui/react-icons"
+import avatarLight from "./assets/avatar-light.png"
+import avatar from "./assets/avatar.png"
+import "./App.css"
 
 export default function App() {
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(false)
 
   const toggleMode = () => {
-    setIsLight(!isLight);
-  };
+    setIsLight(!isLight)
+  }
+
+  const links = [
+    {
+      name: "Portfólio",
+      text: "See my portfolio and get a quote",
+      url: "https://designtechti-dev.vercel.app/",
+      icon: <GlobeIcon className="link-icon" />,
+    },
+    {
+      name: "Instagram",
+      text: "Follow me on Instagram",
+      url: "https://instagram.com/designtechti.dev",
+      icon: <InstagramLogoIcon className="link-icon" />,
+    },
+    {
+      name: "GitHub",
+      text: "See my projects",
+      url: "https://github.com/designtechti490",
+      icon: <GitHubLogoIcon className="link-icon" />,
+    },
+    {
+      name: "YouTube",
+      text: "Subscribe into my YouTube channel",
+      url: "https://youtube.com/@designtechti",
+      icon: <VideoIcon className="link-icon" />,
+    },
+    {
+      name: "LinkedIn",
+      text: "Connect with me on LinkedIn",
+      url: "https://www.linkedin.com/in/designtechtidev/",
+      icon: <LinkedInLogoIcon className="link-icon" />,
+    },
+    {
+      name: "Twitter",
+      text: "Humor Updates in 140 characters",
+      url: "https://twitter.com/designtechtidev",
+      icon: <TwitterLogoIcon className="link-icon" />,
+    },
+    {
+      name: "CodePen",
+      text: "See a few of my projects on CodePen",
+      url: "https://codepen.io/designtechti_dev",
+      icon: <CodeIcon className="link-icon" />,
+    },
+  ]
 
   useEffect(() => {
-    document.documentElement.classList.toggle("light", isLight);
+    document.documentElement.classList.toggle("light", isLight)
 
     return () => {
-      document.documentElement.classList.remove("light");
-    };
-  }, [isLight]);
+      document.documentElement.classList.remove("light")
+    }
+  }, [isLight])
 
   return (
     <div id="app" className={isLight ? "light" : ""}>
@@ -96,98 +141,17 @@ export default function App() {
 
         {/* Links */}
         <ul>
-          <li>
-            <a
-              href="https://designtechti-dev.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GlobeIcon className="link-icon" />
-              <span className="link-content">
-                <strong>Portfólio</strong>
-                <p>See my portfolio and get a quote</p>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://instagram.com/designtechti.dev"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <InstagramLogoIcon className="link-icon" />
-              <span className="link-content">
-                <strong>Instagram</strong>
-                <p>Follow me on Instagram</p>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/designtechti490"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GitHubLogoIcon className="link-icon" />
-              <span className="link-content">
-                <strong>GitHub</strong>
-                <p>See my projects</p>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://youtube.com/@designtechti"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <VideoIcon className="link-icon" />
-              <span className="link-content">
-                <strong>YouTube</strong>
-                <p>Subscribe to my YouTube channel</p>
-              </span>
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.linkedin.com/in/designtechtidev/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkedInLogoIcon className="link-icon" />
-              <span className="link-content">
-                <strong>LinkedIn</strong>
-                <p>Connect with me on LinkedIn</p>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/designtechtidev"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <TwitterLogoIcon className="link-icon" />
-              <span className="link-content">
-                <strong>Twitter</strong>
-                <p>Humor updates in 140 characters</p>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://codepen.io/designtechti_dev"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <CodeIcon className="link-icon" />
-              <span className="link-content">
-                <strong>CodePen</strong>
-                <p>See a few of my projects on CodePen</p>
-              </span>
-            </a>
-          </li>
+          {links.map((link, index) => (
+            <li key={index}>
+              <a href={link.url} target="_blank" rel="noreferrer">
+                {link.icon}
+                <span className="link-content">
+                  <strong>{link.name}</strong>
+                  <p>{link.text}</p>
+                </span>
+              </a>
+            </li>
+          ))}
         </ul>
 
         {/* Footer */}
@@ -197,5 +161,5 @@ export default function App() {
         </footer>
       </div>
     </div>
-  );
+  )
 }
