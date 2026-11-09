@@ -1,0 +1,54 @@
+.switch {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 32px;
+  margin: 4px auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.track {
+  position: absolute;
+  inset: 4px 0;
+  display: block;
+  border: 1px solid var(--stroke-color);
+  border-radius: 9999px;
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff var(--switch-bg-url) no-repeat center;
+  transition: left 0.2s;
+}
+
+.switch:hover .thumb {
+  outline: 8px solid var(--highlight-color);
+}
+
+.light .thumb {
+  left: 32px;
+}
+
+.switch:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 6px;
+  border-radius: 9999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thumb {
+    transition: none;
+  }
+}
