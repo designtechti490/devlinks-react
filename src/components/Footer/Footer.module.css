@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: stretch;
+  margin-bottom: 1.5rem;
+  padding: 24px;
+  font-size: 14px;
+}
+
+.footer a {
+  color: inherit;
+  transition: color 0.1s;
+}
+
+.footer a:hover {
+  color: #2f96d8;
+}

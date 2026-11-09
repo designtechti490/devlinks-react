@@ -1,0 +1,27 @@
+.profile {
+  padding: 24px;
+  text-align: center;
+}
+
+.avatar {
+  display: block;
+  width: 112px;
+  margin: 0 auto;
+  transition: transform 0.2s;
+}
+
+.light {
+  transform: rotateY(180deg);
+}
+
+.profile h1 {
+  margin-top: 8px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.profile p {
+  margin-top: 4px;
+  font-weight: 500;
+}

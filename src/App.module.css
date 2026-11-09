@@ -1,0 +1,41 @@
+.app {
+  --text-color: #fff;
+  --bg-url: url("./assets/bg-mobile.jpg");
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --switch-bg-url: url("./assets/moon-stars.svg");
+
+  min-height: 100vh;
+  color: var(--text-color);
+  background: var(--bg-url) no-repeat top center / cover;
+  background-attachment: fixed;
+}
+
+.light {
+  --text-color: #000;
+  --bg-url: url("./assets/bg-mobile-light.jpg");
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --switch-bg-url: url("./assets/sun.svg");
+}
+
+.container {
+  width: 80%;
+  max-width: 588px;
+  margin: 0 auto;
+  padding-top: 56px;
+}
+
+@media (min-width: 700px) {
+  .app {
+    --bg-url: url("./assets/bg-desktop.jpg");
+  }
+
+  .light {
+    --bg-url: url("./assets/bg-desktop-light.jpg");
+  }
+}
